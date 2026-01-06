@@ -1,12 +1,28 @@
-# Python Template for CS3 
+# EDA PROJECT
 
-This repository provides a simple **template** with `Python` starter code. You can create your own copy by clicking `Use This Template` whenever you need to start a new Python program. For **unit notes**, **project instructions**, and **helpful resources**, refer to our course website: 📖 [PythonDocs](https://coderina.dev/pythondocs/)
+Link to dataset
+[All Terraria Weapons DPS V_1.4.4.9][https://www.kaggle.com/datasets/acr1209/all-terraria-weapons-dps-v-1449/data]
 
-> ⚠️ _DO NOT modify the following files:_ `.devcontainer`, `.vscode`
+## Column Desriptions
 
-### 💻 Codespaces Instructions
-1. Click the green `<> Code` button in the top right area above the list of files
-2. Select the `Codespaces` tab and click `Open new Codespace on main`
-3. Wait for the Codespace to setup (_it will take some time because VSCode extensions are being installed_)
-4. After the extensions load, you can open `main.py` from the **File Explorer** menu on the left, and now you're ready to code!
-5. Always make sure to `commit changes` before closing a Codespace! 
+* Column 1: Name of Weapon
+* Column 2: Class of Weapon
+* Column 3: Game progress
+* Column 4: Single target damage per second
+* Column 5: Multi target damage per second
+* Column 6: Single target damage per second with weapon and projectile
+* Column 7: Damage per second multi target and weapons
+* Column 8: Observations(Piece, and other things)
+
+## Hypothesis/Question
+
+1. Is there a correlation btwn this Dps and progress when it is obtained?
+2. Does every weapon have multi target dps?
+3. Is there any correlation to class and single target dps
+4. Does the length of the name correlate to dps?
+5. How many weapons does each class have?
+
+
+## Visualisation plan
+
+Come up with ideas for graphs to test your hypothesis
