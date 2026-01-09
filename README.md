@@ -28,6 +28,6 @@ Link to dataset
 Come up with ideas for graphs to test your hypothesis
 1. Dps vs game progress (probably a bar graph((x axis= Game progress, y axis dps)))
 2. Pie graph for if all weapons have multi target dps
-3. Bar graph for Class(x axis) and multi target dps(y axis)
+3. Circular bar plot for Class(x axis) and multi target dps(y axis)
 4. ANOTHER BAR GRAPH for length of the names(string) aand the dps
-5. Pie chart for distribution of class weapons.
+5. Circular bar plot for distribution of class weapons.
