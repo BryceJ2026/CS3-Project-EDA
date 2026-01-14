@@ -11,11 +11,13 @@ Terraria = pd.read_csv('Terraria DPS_TV1.4.4.9_V3.csv')
 #Starting first scatter plot
 dps = Terraria['DPS (SINGLE TARGET)'] #y value
 game_progress = Terraria['GAME PROGRESSION']
-obser = Terraria['']
+multdps = Terraria['DPS (MULTI TARGET)']
+name = Terraria['NAME']
 plt.bar(game_progress, dps)
 plt.xticks(rotation=45)
 plt.savefig('dpsvgameprogress.png', bbox_inches='tight')
 plt.close()
 
 
-plt.pie()
+plt.pie(name, multdps.bool(), startangle=45)
+plt.savefig('multpie.png')
