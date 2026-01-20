@@ -18,11 +18,17 @@ plt.bar(game_progress, dps)
 plt.xticks(rotation=45)
 plt.savefig('dpsvgameprogress.png', bbox_inches='tight')
 plt.close()
+#cleanedT = Terraria[Terraria['DPS (MULTI TARGET)'] == "NaN"]
+#t_subset = Terraria.dropna(subset=['DPS (MULTI TARGET)'])
 
-Terraria.set_index('DPS (MULTI TARGET)')
-a = Terraria.ix[[p.id, 'nan']]
-print(a)
+Terraria['is_multi_dps'] = Terraria['DPS (MULTI TARGET)'].notna()
 # Create subset that counts all weapons with multi target dps
 # Create subset that counts weapons without multi target dps
-#plt.pie(multdps, multdps.values, startangle=45)
+#plt.bar(cleanedT.values, uncleanT.values, startangle=45)
 #plt.savefig('multpie.png')
+
+print(Terraria['is_multi_dps'])
+
+Terraria['is_multi_dps'].value_counts().plot(kind='pie', labels=['True', 'False'], colors= ['skyblue', 'lightcoral'])
+plt.savefig('multipie')
+plt.close()
