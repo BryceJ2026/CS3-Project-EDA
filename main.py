@@ -13,6 +13,8 @@ dps = Terraria['DPS (SINGLE TARGET)'] #y value
 game_progress = Terraria['GAME PROGRESSION']
 multdps = Terraria['DPS (MULTI TARGET)']
 #Drop nan
+classes = Terraria['CLASS']
+
 name = Terraria['NAME']
 plt.bar(game_progress, dps)
 plt.xticks(rotation=45)
@@ -30,5 +32,11 @@ Terraria['is_multi_dps'] = Terraria['DPS (MULTI TARGET)'].notna()
 print(Terraria['is_multi_dps'])
 
 Terraria['is_multi_dps'].value_counts().plot(kind='pie', labels=['True', 'False'], colors= ['skyblue', 'lightcoral'])
-plt.savefig('multipie')
+plt.savefig('multipie.png')
 plt.close()
+
+fig, ax = plt.subplots(subplot_kw=dict(polar=True))
+bars = ax.bar(np.arange(len(classes))* 2 * np.pi / len(classes), dps)
+
+plt.show()
+plt.savefig('circbar.png')
