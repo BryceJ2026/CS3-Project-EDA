@@ -2,6 +2,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
 import numpy as np
+import squarify 
 
 #import geopandas as gpd
 #from geodatasets import get_path
@@ -35,8 +36,17 @@ Terraria['is_multi_dps'].value_counts().plot(kind='pie', labels=['True', 'False'
 plt.savefig('multipie.png')
 plt.close()
 
-fig, ax = plt.subplots(subplot_kw=dict(polar=True))
-bars = ax.bar(np.arange(len(classes))* 2 * np.pi / len(classes), dps)
-
-plt.show()
+plt.bar(classes,dps)
 plt.savefig('circbar.png')
+plt.close()
+
+late_game = Terraria[Terraria['GAME PROGRESSION']== 'Post-Moonlord']
+squarify.plot(sizes=late_game['DPS (SINGLE TARGET)'], label=late_game['CLASS'], alpha=.8, text_kwargs={'fontsize': 12, 'fontweight': 'bold'} )
+plt.title('Late game dps hierarchy')
+plt.axis('off')
+plt.savefig('groot.png')
+plt.close()
+
+early_game = Terraria[Terraria['GAME PROGRESSION']== 'Pre-Boss']
+squarify.plot(sizes=early_game['DPS (SINGLE TARGET)'], label=early_game['CLASS'], alpha=.8, text_kwargs={'fontsize': 5, 'fontweight': 'bold'} )
+plt.savefig('anothergroot.png')
