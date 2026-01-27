@@ -50,3 +50,8 @@ plt.close()
 early_game = Terraria[Terraria['GAME PROGRESSION']== 'Pre-Boss']
 squarify.plot(sizes=early_game['DPS (SINGLE TARGET)'], label=early_game['CLASS'], alpha=.8, text_kwargs={'fontsize': 5, 'fontweight': 'bold'} )
 plt.savefig('anothergroot.png')
+plt.close()
+Terraria['LENGTH'] = Terraria['NAME'].str.len()
+
+plt.bar(Terraria['LENGTH'], dps)
+plt.savefig('lengthbar.png')
